@@ -48,7 +48,6 @@ df.head()
 # Check for missing values
 df.isnull().sum()
 
-
 # ===============================
 # Encode Emotion Labels
 # ===============================
@@ -61,7 +60,6 @@ for i, emo in enumerate(unique_emotions):
     emotion_numbers[emo] = i
 
 df['emotion'] = df['emotion'].map(emotion_numbers)
-
 
 # ===============================
 # Text Preprocessing
@@ -88,7 +86,6 @@ def remove_emojis(text):
 
 df['text'] = df['text'].apply(remove_emojis)
 
-
 # ===============================
 # Stopword Removal
 # ===============================
@@ -106,7 +103,6 @@ def remove_stopwords(text):
 
 df['text'] = df['text'].apply(remove_stopwords)
 
-
 # ===============================
 # Train-Test Split
 # ===============================
@@ -118,7 +114,6 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.20, random_state=42
 )
 
-
 # ===============================
 # TF-IDF Vectorization
 # ===============================
@@ -128,7 +123,6 @@ tfidf_vectorizer = TfidfVectorizer()
 X_train_tfidf = tfidf_vectorizer.fit_transform(X_train)
 X_test_tfidf = tfidf_vectorizer.transform(X_test)
 
-
 # ===============================
 # Model Training (Logistic Regression)
 # ===============================
@@ -136,7 +130,6 @@ X_test_tfidf = tfidf_vectorizer.transform(X_test)
 lr_model = LogisticRegression(max_iter=10000)
 
 lr_model.fit(X_train_tfidf, y_train)
-
 
 # ===============================
 # Model Evaluation
@@ -147,7 +140,6 @@ y_pred = lr_model.predict(X_test_tfidf)
 accuracy = accuracy_score(y_test, y_pred)
 print("Model Accuracy:", accuracy)
 
-
 # ===============================
 # Save Model and Vectorizer
 # ===============================
@@ -155,4 +147,4 @@ print("Model Accuracy:", accuracy)
 joblib.dump(lr_model, 'sentiment_model.pkl')
 joblib.dump(tfidf_vectorizer, 'tfidf_vectorizer.pkl')
 
-print("Model and vectorizer saved successfully!")
+print("Your mewooo is saved successfully!")
