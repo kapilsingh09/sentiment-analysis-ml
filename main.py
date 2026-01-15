@@ -51,7 +51,7 @@ sentiment_map = {
 @app.post("/predict")
 @app.post("/predict")
 def predict_sentiment(data: InputData):
-    cleaned_text = data.text.strip().lower()  # 👈 lowercase here
+    cleaned_text = data.text.strip().lower()  
 
     if not cleaned_text:
         raise HTTPException(status_code=400, detail="Text cannot be empty")
