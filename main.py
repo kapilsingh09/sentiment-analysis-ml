@@ -14,7 +14,6 @@ from slowapi.middleware import SlowAPIMiddleware
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ------------------- Rate Limiter -------------------
 limiter = Limiter(key_func=get_remote_address)
 
 app = FastAPI(

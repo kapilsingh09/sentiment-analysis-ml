@@ -2,11 +2,6 @@
 # Sentiment Analysis Model
 # ===============================
 
-# Import required libraries
-# ===============================
-# Import Required Libraries
-# ===============================
-
 # Numerical computation
 import numpy as np
 
@@ -144,8 +139,8 @@ print("Model Accuracy:", accuracy)
 # Save Model and Vectorizer
 # ===============================
 
-joblib.dump(lr_model, 'sentiment_model.pkl')
-joblib.dump(tfidf_vectorizer, 'tfidf_vectorizer.pkl')
+# joblib.dump(lr_model, 'sentiment_model.pkl')
+# joblib.dump(tfidf_vectorizer, 'tfidf_vectorizer.pkl')
 
 print("Your mewooo is saved successfully!")
 #here i use ai too make coming main_nlp.py file
